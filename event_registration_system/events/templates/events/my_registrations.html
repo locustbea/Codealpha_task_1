@@ -1,0 +1,10 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>My Registrations</h1>
+  <ul>
+    {% for registration in registrations %}
+      <li>{{ registration.event.name }} (Registered at: {{ registration.registered_at }})</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

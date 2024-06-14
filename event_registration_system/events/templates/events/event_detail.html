@@ -1,0 +1,13 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>{{ event.name }}</h1>
+  <p>{{ event.description }}</p>
+  <p>Start: {{ event.start_time }}</p>
+  <p>End: {{ event.end_time }}</p>
+  {% if user.is_authenticated %}
+    <a href="{% url 'register_for_event' event.id %}">Register</a>
+  {% else %}
+    <p><a href="{% url 'login' %}">Login</a> to register</p>
+  {% endif %}
+{% endblock %}
